@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Customer Page</title>
+<link rel="stylesheet" type="text/css" href="/Customer.css">
+
+</head>
+<body>
+	<div class="container">
+		<h1>
+			Hi, <span th:text="${name}"></span>
+		</h1>
+		<form action="playsongs" method="post">
+		   <button class="button">View Songs</button>
+		</form>
+		<br>
+		<a href="/displaysubscription" class="button">Pay</a>
+		<br>
+		<a href="/pay" class="button">Get Premium</a>
+		<br>
+		<a href="/logout" class="button">LogOut</a>
+		
+		
+	</div>
+		
+	
+</body>
+</html>

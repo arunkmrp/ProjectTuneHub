@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create PlayList</title>
+<style>
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	padding: 20px;
+}
+
+form {
+	max-width: 500px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+label {
+	display: block;
+	margin-bottom: 10px;
+}
+
+input[type="text"] {
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+}
+
+input[type="checkbox"] {
+	margin-right: 10px;
+}
+
+input[type="submit"] {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	background-color: #3498db;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+	background-color: #2980b9;
+}
+.error-message {
+	color: red;
+	margin-bottom: 10px; /* Adjust margin-bottom as needed */
+	text-align:center;
+}
+</style>
+</head>
+<body>
+	<div>
+	 <p class="error-message" th:text="${error}"></p>
+		<form action="addplaylist" method="post">
+			<label>PlayList Name:</label> <input type="text" name="name">
+			<br>
+			<div th:each="song:${songs}">
+				<input type="checkbox" th:name="songs" th:value="${song.id}">
+				<label th:text="${song.name}"></label><br>
+			</div>
+			<input type="submit" value="ADD PLAYLIST">
+		</form>
+	</div>
+</body>
+</html>

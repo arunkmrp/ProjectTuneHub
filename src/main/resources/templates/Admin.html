@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin</title>
+<link rel="stylesheet" type="text/css" href="/Admin.css">
+</head>
+<body>
+	<div class="container">
+		<h1>
+			Hi, <span th:text="${name}"></span>
+		</h1>
+		<a href="/addnewsongs" class="button">Add New Songs</a> 
+		<a href="/songs" class="button">View Songs</a>
+		<a href="/createplaylist" class="button">Create PlayList</a>
+		<a href="/viewplaylist" class="button">View PlayList</a>
+		
+	</div>
+</body>
+</html>

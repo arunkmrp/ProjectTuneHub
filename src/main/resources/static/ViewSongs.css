@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+body {
+	font-family: Arial, sans-serif;
+	background-color: #f0f0f0;
+	text-align: center;
+	margin-top: 50px;
+}
+
+h1 {
+	margin-bottom: 20px;
+	color: #333;
+}
+
+table {
+	width: 90%; /* Adjusted table width */
+	margin: 0 auto;
+	border-collapse: collapse;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+	padding: 10px;
+	border: 1px solid #ddd;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+	background-color: #f9f9f9;
+}
+
+tr:hover {
+	background-color: #f2f2f2;
+}
+
+.audio-column {
+	width: 30%; /* Adjusted width of audio column */
+}
+
+.audio-player {
+	width: 100%; /* Make audio player take full width of column */
+	display: block;
+	margin: 0 auto;
+}

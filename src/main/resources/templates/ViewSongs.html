@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View Songs</title>
+<link rel="stylesheet" type="text/css" href="/ViewSongs.css">
+
+</head>
+<body>
+	<h1>Songs List</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Artist</th>
+				<th>Genre</th>
+				<th class="audio-column">Listen</th>
+				<!-- Added class to audio column -->
+			</tr>
+		</thead>
+		<tbody>
+			<!-- Iterate over each song -->
+			<tr th:each="song : ${songs}">
+				<td th:text="${song.name}"></td>
+				<td th:text="${song.artist}"></td>
+				<td th:text="${song.genre}"></td>
+				<td class="audio-column">
+					<!-- Added class to audio column --> <!-- Embed the audio player -->
+					<audio controls class="audio-player" th:attr="src=@{${song.link}}">
+					</audio>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</body>
+</html>

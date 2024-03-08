@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Your PlayLists</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .playlist-link {
+            display: block;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            width: 200px; /* Adjust width as needed */
+        }
+        .playlist-link:hover {
+            background-color: #2980b9;
+        }
+        .playlist-link p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your PlayLists</h1>
+        <div  th:each="playlist : ${playlist}">
+            <a th:href="@{/playlistsongs(playlistId=${playlist.id})}" class="playlist-link">
+                <p th:text="${playlist.name}"></p>
+            </a>
+        </div>
+    </div> 
+</body>
+</html>
